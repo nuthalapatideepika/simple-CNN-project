@@ -1,7 +1,4 @@
-Perfect 👍
-Here’s your **entire README fully re-styled** with proper font sizing and alignment using HTML + Markdown (no emojis, no unnecessary fluff). This will render cleanly on GitHub and look more professional.
 
-````markdown
 <h1 align="center" style="font-size:42px; font-weight:bold;">
 ImageLearner — CNN for Image Understanding
 </h1>
