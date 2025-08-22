@@ -1,0 +1,8 @@
+[tool.ruff]
+line-length = 88
+exclude = ["__pycache__", ".venv", "outputs", "data"]
+extend-ignore = ["E203", "W503"]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
