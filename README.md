@@ -1,6 +1,6 @@
 # ImageLearner — CNN for Image Understanding
 
-*A clean, beginner-friendly PyTorch project that trains a compact Convolutional Neural Network (CNN) on MNIST and easily extends to CIFAR-10.*  
+*A clean, beginner-friendly PyTorch project that trains a compact Convolutional Neural Network (CNN) on MNIST and easily extends to CIFAR-10.*
 This README also serves as a **Git & GitHub mini-handbook**, helping you learn modern collaboration while building a real ML project.
 
 <p align="center">
@@ -14,54 +14,61 @@ This README also serves as a **Git & GitHub mini-handbook**, helping you learn m
 
 ---
 
-## Table of Contents
-[Why this project](#why-this-project)
-  [Key features](#key-features)
-  [Project structure](#project-structure)
-  [Quickstart](#quickstart)
-  [Training & evaluation](#training--evaluation)
-  [Reproducibility](#reproducibility)
-  [Extend to CIFAR-10](#extend-to-cifar-10)
-  [Git & GitHub — Crash Course](#git--github--crash-course)
-  [Core concepts](#core-concepts)
-    [Daily workflow](#daily-workflow)
-    [Commit messages](#commit-messages)
-    [Pull Requests (PRs)](#pull-requests-prs)
-   [Issues, labels, milestones](#issues-labels-milestones)
-   [Releases & tags](#releases--tags)
-   [Branch protection & CODEOWNERS](#branch-protection--codeowners)
-   [Make your repo efficient (beginner checklist)](#make-your-repo-efficient-beginner-checklist)
- [Quality gates (CI, lint, tests)](#quality-gates-ci-lint-tests)
- [Docker usage](#docker-usage)
- [Performance tips](#performance-tips)
-  [FAQ](#faq)
- [Troubleshooting](#troubleshooting)
- [Roadmap](#roadmap)
- [Contributing](#contributing)
- [License](#license)
- [Appendix — Git commands](#appendix--git-commands)
+## 📑 Table of Contents
+
+* [Why this project](#why-this-project)
+* [Key features](#key-features)
+* [Project structure](#project-structure)
+* [Quickstart](#quickstart)
+* [Training & evaluation](#training--evaluation)
+* [Reproducibility](#reproducibility)
+* [Extend to CIFAR-10](#extend-to-cifar-10)
+* [Git & GitHub — Crash Course](#git--github--crash-course)
+
+  * [Core concepts](#core-concepts)
+  * [Daily workflow](#daily-workflow)
+  * [Commit messages](#commit-messages)
+  * [Pull Requests (PRs)](#pull-requests-prs)
+  * [Issues, labels, milestones](#issues-labels-milestones)
+  * [Releases & tags](#releases--tags)
+  * [Branch protection & CODEOWNERS](#branch-protection--codeowners)
+  * [Make your repo efficient (beginner checklist)](#make-your-repo-efficient-beginner-checklist)
+* [Quality gates (CI, lint, tests)](#quality-gates-ci-lint-tests)
+* [Docker usage](#docker-usage)
+* [Performance tips](#performance-tips)
+* [FAQ](#faq)
+* [Troubleshooting](#troubleshooting)
+* [Roadmap](#roadmap)
+* [Contributing](#contributing)
+* [License](#license)
+* [Appendix — Git commands](#appendix--git-commands)
 
 ---
 
-## Why this project
-ImageLearner is a **minimal but production-minded** ML starter:
- 📂 Clear folder layout (great for learning & interviews)  
- ⚙️ Built-in automation: formatting, linting, tests, CI  
- 📖 Practical **Git/GitHub guide** included  
+##  Why this project
+
+**ImageLearner** is a **minimal but production-minded** ML starter:
+
+* 📂 Clear folder layout (great for learning & interviews)
+* ⚙️ Built-in automation: formatting, linting, tests, CI
+* 📖 Practical **Git/GitHub guide** included
 
 ---
 
-## Key features
- **PyTorch** training loop with sensible CLI (`--epochs`, `--lr`, `--batch_size`, `--seed`)
- **SimpleCNN** model you can easily extend
- **Ruff** (format + lint) and **PyTest** (smoke tests)
- **GitHub Actions** CI (runs on every push/PR)
- **Dockerfile** for reproducible runs anywhere
- **Makefile** shortcuts for speed
+##  Key features
+
+* **PyTorch** training loop with sensible CLI (`--epochs`, `--lr`, `--batch_size`, `--seed`)
+* **SimpleCNN** model you can easily extend
+* **Ruff** (format + lint) and **PyTest** (smoke tests)
+* **GitHub Actions** CI (runs on every push/PR)
+* **Dockerfile** for reproducible runs anywhere
+* **Makefile** shortcuts for speed
 
 ---
 
-## Project structure
+## 📂 Project structure
+
+```
 ImageLearner/
 ├─ README.md
 ├─ requirements.txt
@@ -79,12 +86,38 @@ ImageLearner/
       └─ simple_cnn.py       # baseline CNN
 └─ tests/
    └─ test_smoke.py          # shape/forward test
+```
+
 ---
-## Quickstart
-Requires Python 3.10+. On Windows, use .venv\Scripts\activate instead of source.
+
+## ⚡ Quickstart
+
+Requires **Python 3.10+**. On Windows, use `.venv\Scripts\activate` instead of `source`.
+
+```bash
 # Clone and enter the project
 git clone https://github.com/YOUR_USERNAME/simple-CNN-project-.git
 cd simple-CNN-project-
+
+# Create a virtual environment & install deps
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+
+# Run tests and a quick 1-epoch train
+pytest -q
+python src/train.py --epochs 1
+```
+
+### Handy commands (via Makefile)
+
+```bash
+make fmt     # auto-format code with Ruff
+make lint    # run linter
+make test    # run tests
+make train   # quick training run
+```
+
+---
 
 # Create a virtual environment & install deps
 python -m venv .venv && source .venv/bin/activate
