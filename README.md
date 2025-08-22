@@ -1,4 +1,4 @@
-# AI Project Template
+# AI ProjectsTemplate
 
 A high-quality, production-ready PyTorch template for building, training, and deploying compact Convolutional Neural Networks (CNNs) on image datasets.  
 Designed for rapid prototyping, reproducibility, and seamless integration with modern ML tooling.
