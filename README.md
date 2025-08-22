@@ -1,8 +1,15 @@
+Perfect 👍
+Here’s your **entire README fully re-styled** with proper font sizing and alignment using HTML + Markdown (no emojis, no unnecessary fluff). This will render cleanly on GitHub and look more professional.
 
-# ImageLearner — CNN for Image Understanding
+````markdown
+<h1 align="center" style="font-size:42px; font-weight:bold;">
+ImageLearner — CNN for Image Understanding
+</h1>
 
-A beginner-friendly PyTorch project that trains a compact Convolutional Neural Network (CNN) on MNIST and easily extends to CIFAR-10.  
-This README also doubles as a **Git & GitHub mini-handbook**, helping you learn modern collaboration while building a real ML project.
+<p align="center" style="font-size:18px;">
+A beginner-friendly PyTorch project that trains a compact Convolutional Neural Network (CNN) on MNIST and easily extends to CIFAR-10.<br>
+This README also doubles as a <b>Git & GitHub mini-handbook</b>, helping you learn modern collaboration while building a real ML project.
+</p>
 
 <p align="center">
   <img alt="Python" src="https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white">
@@ -13,55 +20,59 @@ This README also doubles as a **Git & GitHub mini-handbook**, helping you learn 
   <img alt="License" src="https://img.shields.io/badge/License-MIT-green">
 </p>
 
----
+<hr>
 
-## Table of Contents
-- [Why this project](#why-this-project)
-- [Key features](#key-features)
-- [Project structure](#project-structure)
-- [Quickstart](#quickstart)
-- [Training & evaluation](#training--evaluation)
-- [Reproducibility](#reproducibility)
-- [Extend to CIFAR-10](#extend-to-cifar-10)
-- [Git & GitHub — Crash Course](#git--github--crash-course)
-  - [Core concepts](#core-concepts)
-  - [Daily workflow](#daily-workflow)
-  - [Commit messages](#commit-messages)
-  - [Pull Requests (PRs)](#pull-requests-prs)
-  - [Issues, labels, milestones](#issues-labels-milestones)
-  - [Releases & tags](#releases--tags)
-  - [Branch protection & CODEOWNERS](#branch-protection--codeowners)
-  - [Beginner efficiency checklist](#beginner-efficiency-checklist)
-- [Quality gates (CI, lint, tests)](#quality-gates-ci-lint-tests)
-- [Docker usage](#docker-usage)
-- [Performance tips](#performance-tips)
-- [FAQ](#faq)
-- [Troubleshooting](#troubleshooting)
-- [Roadmap](#roadmap)
-- [Contributing](#contributing)
-- [License](#license)
-- [Appendix — Git commands](#appendix--git-commands)
+<h2 style="font-size:28px;">Table of Contents</h2>
 
----
+[Why this project](#why-this-project)
+[Key features](#key-features)
+[Project structure](#project-structure)
+[Quickstart](#quickstart)
+[Training & evaluation](#training--evaluation)
+[Reproducibility](#reproducibility)
+[Extend to CIFAR-10](#extend-to-cifar-10)
+[Git & GitHub — Crash Course](#git--github--crash-course)
+[Core concepts](#core-concepts)
+[Daily workflow](#daily-workflow)
+[Commit messages](#commit-messages)
+[Pull Requests (PRs)](#pull-requests-prs)
+[Issues, labels, milestones](#issues-labels-milestones)
+[Releases & tags](#releases--tags)
+[Branch protection & CODEOWNERS](#branch-protection--codeowners)
+[Beginner efficiency checklist](#beginner-efficiency-checklist)
+[Quality gates (CI, lint, tests)](#quality-gates-ci-lint-tests)
+[Docker usage](#docker-usage)
+[Performance tips](#performance-tips)
+[FAQ](#faq)
+[Troubleshooting](#troubleshooting)
+[Roadmap](#roadmap)
+[Contributing](#contributing)
+[License](#license)
+[Appendix — Git commands](#appendix--git-commands)
 
-## Why this project
-- Clear folder layout (great for learning & interviews)  
-- Built-in automation: formatting, linting, tests, CI  
-- Practical **Git/GitHub** guide included
+<hr>
 
----
+<h2 style="font-size:28px;">Why this project</h2>
 
-## Key features
-- **PyTorch** training loop with CLI flags (`--epochs`, `--lr`, `--batch_size`, `--seed`)
-- **SimpleCNN** baseline you can easily extend
-- **Ruff** (format + lint) and **PyTest** (smoke tests)
-- **GitHub Actions** CI on every push/PR
-- **Dockerfile** for reproducible runs anywhere
-- **Makefile** shortcuts for speed
+Clear folder layout (great for learning & interviews)  
+Built-in automation: formatting, linting, tests, CI  
+Practical <b>Git/GitHub</b> guide included
 
----
+<hr>
 
-## Project structure
+<h2 style="font-size:28px;">Key features</h2>
+
+ <b>PyTorch</b> training loop with CLI flags (`--epochs`, `--lr`, `--batch_size`, `--seed`)  
+ <b>SimpleCNN</b> baseline you can easily extend  
+ <b>Ruff</b> (format + lint) and <b>PyTest</b> (smoke tests)  
+ <b>GitHub Actions</b> CI on every push/PR  
+ <b>Dockerfile</b> for reproducible runs anywhere  
+ <b>Makefile</b> shortcuts for speed  
+
+<hr>
+
+<h2 style="font-size:28px;">Project structure</h2>
+
 ```text
 ImageLearner/
 ├─ README.md
@@ -82,11 +93,11 @@ ImageLearner/
    └─ test_smoke.py          # shape/forward test
 ````
 
----
+<hr>
 
-## Quickstart
+<h2 style="font-size:28px;">Quickstart</h2>
 
-> Requires **Python 3.10+**. On Windows, use `.\.venv\Scripts\activate` instead of `source`.
+> Requires <b>Python 3.10+</b>. On Windows, use `.\.venv\Scripts\activate` instead of `source`.
 
 ```bash
 # Clone and enter the project
@@ -102,7 +113,7 @@ pytest -q
 python src/train.py --epochs 1
 ```
 
-**Makefile shortcuts**
+<b>Makefile shortcuts</b>
 
 ```bash
 make fmt     # auto-format with Ruff
@@ -111,9 +122,9 @@ make test    # run tests
 make train   # quick training run
 ```
 
----
+<hr>
 
-## Training & evaluation
+<h2 style="font-size:28px;">Training & evaluation</h2>
 
 ```bash
 python src/train.py --epochs 5 --lr 0.001 --batch_size 128 --seed 42
@@ -128,17 +139,17 @@ Best accuracy: 0.99xx
 Saved: outputs/best.pt
 ```
 
----
+<hr>
 
-## Reproducibility
+<h2 style="font-size:28px;">Reproducibility</h2>
 
 * Seeds for `random`, `numpy`, and `torch` are fixed
 * CuDNN deterministic settings reduce randomness
 * Ensures consistent results across machines
 
----
+<hr>
 
-## Extend to CIFAR-10
+<h2 style="font-size:28px;">Extend to CIFAR-10</h2>
 
 1. In `src/data.py`, replace `datasets.MNIST` with `datasets.CIFAR10`
 2. Update transforms:
@@ -150,20 +161,20 @@ Saved: outputs/best.pt
 3. In `models/simple_cnn.py`, change input channels **1 → 3**
 4. Add augmentations (e.g., `RandomCrop`, `RandomHorizontalFlip`)
 
----
+<hr>
 
-## Git & GitHub — Crash Course
+<h2 style="font-size:28px;">Git & GitHub — Crash Course</h2>
 
-### Core concepts
+<h3>Core concepts</h3>
 
-* **Repository** → project + history
-* **Commit** → snapshot with message
-* **Branch** → safe space for new work
-* **Remote** → GitHub copy of repo
-* **Push / Pull** → upload / download changes
-* **Pull Request (PR)** → propose merging a branch into `main`
+* <b>Repository</b> → project + history
+* <b>Commit</b> → snapshot with message
+* <b>Branch</b> → safe space for new work
+* <b>Remote</b> → GitHub copy of repo
+* <b>Push / Pull</b> → upload / download changes
+* <b>Pull Request (PR)</b> → propose merging a branch into `main`
 
-### Daily workflow
+<h3>Daily workflow</h3>
 
 ```bash
 git checkout -b feature/cifar10-dataloaders
@@ -174,65 +185,65 @@ git push -u origin feature/cifar10-dataloaders
 # Open PR → CI runs → review → squash & merge
 ```
 
-### Commit messages
+<h3>Commit messages</h3>
 
-Use **Conventional Commits**:
+Use <b>Conventional Commits</b>:
 
 * `feat(model): add dropout for regularization`
 * `fix(train): correct accuracy calculation`
 * `docs(readme): add CIFAR-10 guide`
 
-### Pull Requests (PRs)
+<h3>Pull Requests (PRs)</h3>
 
 * Keep PRs small & focused
 * CI must pass
 * Provide description + linked issue (e.g., `Closes #12`)
-* **Squash & merge** after review
+* <b>Squash & merge</b> after review
 
-### Issues, labels, milestones
+<h3>Issues, labels, milestones</h3>
 
-* **Issues** → track bugs/features
-* **Labels** → categorize (e.g., `bug`, `enhancement`)
-* **Milestones** → group tasks for releases
+* <b>Issues</b> → track bugs/features
+* <b>Labels</b> → categorize (e.g., `bug`, `enhancement`)
+* <b>Milestones</b> → group tasks for releases
 
-### Releases & tags
+<h3>Releases & tags</h3>
 
-* **Tag** → mark a commit (e.g., `v0.1.0`)
-* **Release** → bundle a tag with notes/assets
+* <b>Tag</b> → mark a commit (e.g., `v0.1.0`)
+* <b>Release</b> → bundle a tag with notes/assets
 
-### Branch protection & CODEOWNERS
+<h3>Branch protection & CODEOWNERS</h3>
 
 * Protect `main`: require PR, review, and CI checks
-* Use **CODEOWNERS** to auto-request reviewers for paths
+* Use <b>CODEOWNERS</b> to auto-request reviewers for paths
 
-### Beginner efficiency checklist
+<h3>Beginner efficiency checklist</h3>
 
 * Enable Issues (and Discussions if needed)
-* Enable **Squash merge**; disable merge commits
+* Enable <b>Squash merge</b>; disable merge commits
 * Auto-delete merged branches
 * Enable Dependabot + security scanning (CodeQL, secrets)
 * Restrict direct pushes to `main`
 
----
+<hr>
 
-## Quality gates (CI, lint, tests)
+<h2 style="font-size:28px;">Quality gates (CI, lint, tests)</h2>
 
-* **Ruff** → formatting + lint
-* **PyTest** → correctness checks
-* **GitHub Actions** → runs on every push/PR
+* <b>Ruff</b> → formatting + lint
+* <b>PyTest</b> → correctness checks
+* <b>GitHub Actions</b> → runs on every push/PR
 
----
+<hr>
 
-## Docker usage
+<h2 style="font-size:28px;">Docker usage</h2>
 
 ```bash
 docker build -t imagelearner .
 docker run --rm imagelearner python src/train.py --epochs 1
 ```
 
----
+<hr>
 
-## Performance tips
+<h2 style="font-size:28px;">Performance tips</h2>
 
 * Use the largest `batch_size` your GPU allows
 * Try `AdamW` + `OneCycleLR`
@@ -240,33 +251,33 @@ docker run --rm imagelearner python src/train.py --epochs 1
 * Use mixed precision (`torch.cuda.amp`)
 * Profile with `torch.profiler`
 
----
+<hr>
 
-## FAQ
+<h2 style="font-size:28px;">FAQ</h2>
 
-**I’m new to Git. How do I start?**
+<b>I’m new to Git. How do I start?</b>
 Install Git → clone repo → create branch → commit → push → open PR.
 
-**Why can’t I push directly to `main`?**
+<b>Why can’t I push directly to `main`?</b>
 Branch protection keeps `main` stable. Use PRs.
 
-**CI fails on “lint”. What now?**
+<b>CI fails on “lint”. What now?</b>
 Run `make fmt` locally → commit → push again.
 
-**Where is the model saved?**
+<b>Where is the model saved?</b>
 `outputs/best.pt` after validation accuracy improves.
 
----
+<hr>
 
-## Troubleshooting
+<h2 style="font-size:28px;">Troubleshooting</h2>
 
-* **CUDA not found** → install CUDA-enabled PyTorch; check `torch.cuda.is_available()`
-* **Permission denied** → on Unix, `chmod +x`; ensure virtualenv is active
-* **Dataset blocked** → edit dataset path in `data.py` or pre-download
+* <b>CUDA not found</b> → install CUDA-enabled PyTorch; check `torch.cuda.is_available()`
+* <b>Permission denied</b> → on Unix, `chmod +x`; ensure virtualenv is active
+* <b>Dataset blocked</b> → edit dataset path in `data.py` or pre-download
 
----
+<hr>
 
-## Roadmap
+<h2 style="font-size:28px;">Roadmap</h2>
 
 * [ ] Add CIFAR-10 example with augmentations
 * [ ] Mixed precision training (`--amp`)
@@ -274,9 +285,9 @@ Run `make fmt` locally → commit → push again.
 * [ ] CODEOWNERS + PR/Issue templates
 * [ ] Pre-commit hook for Ruff
 
----
+<hr>
 
-## Contributing
+<h2 style="font-size:28px;">Contributing</h2>
 
 1. Open an Issue to discuss
 2. Create a branch: `git checkout -b feat/your-feature`
@@ -284,17 +295,17 @@ Run `make fmt` locally → commit → push again.
 4. Push branch → open PR → request review
 5. Squash & merge after approval
 
----
+<hr>
 
-## License
+<h2 style="font-size:28px;">License</h2>
 
-**MIT** — free to use/modify with attribution. No warranty.
+<b>MIT</b> — free to use/modify with attribution. No warranty.
 
----
+<hr>
 
-## Appendix — Git commands
+<h2 style="font-size:28px;">Appendix — Git commands</h2>
 
-
+```bash
 # Clone repo
 git clone https://github.com/nuthalapatideepika/simple-CNN-project.git
 cd simple-CNN-project
@@ -314,4 +325,6 @@ git push -u origin feat/cifar10
 git checkout main && git pull
 git checkout feat/cifar10
 git rebase main   # or: git merge main
+```
 
+```
