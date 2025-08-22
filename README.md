@@ -232,15 +232,15 @@ Follow **Conventional Commits**:
 
 ### Beginner efficiency checklist
 
-✅ Enable Issues & Discussions
-✅ Enable squash merge, disable merge commits
-✅ Auto-delete merged branches
-✅ Enable Dependabot + security scanning
-✅ Restrict direct pushes to `main`
+ Enable Issues & Discussions
+ Enable squash merge, disable merge commits
+ Auto-delete merged branches
+ Enable Dependabot + security scanning
+ Restrict direct pushes to `main`
 
 ---
 
-## ✅ Quality gates (CI, lint, tests)
+##  Quality gates (CI, lint, tests)
 
 * **Ruff** → style & lint
 * **PyTest** → correctness tests
@@ -345,5 +345,5 @@ git rebase main   # or: git merge main
 
 ```
 
----
+
 
