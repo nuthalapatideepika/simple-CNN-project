@@ -1,4 +1,32 @@
+<!-- HERO / HEADER (README-safe HTML) -->
+<div align="center">
+  <h1>ImageLearner — CNN for Image Understanding</h1>
+  <p>
+    A beginner-friendly <b>PyTorch</b> project that trains a compact CNN on <b>MNIST</b> and extends to <b>CIFAR-10</b>.<br>
+    This README doubles as a <b>Git &amp; GitHub mini-handbook</b> for a professional workflow.
+  </p>
 
+  <!-- Shields -->
+  <p>
+    <img alt="Python" src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white">
+    <img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white">
+    <a href="https://github.com/YOUR_USERNAME/simple-CNN-project-/actions">
+      <img alt="CI" src="https://github.com/YOUR_USERNAME/simple-CNN-project-/actions/workflows/ci.yml/badge.svg">
+    </a>
+    <img alt="License" src="https://img.shields.io/badge/License-MIT-green">
+  </p>
+
+  <!-- Quick links -->
+  <p>
+    <a href="#-quickstart">Quickstart</a> •
+    <a href="#-training--evaluation">Train</a> •
+    <a href="#-extend-to-cifar-10">CIFAR-10</a> •
+    <a href="#-git--github--crash-course">Git Crash Course</a> •
+    <a href="#-quality-gates-ci-lint-tests">CI &amp; Tests</a>
+  </p>
+
+  <hr style="width: 80%; border: 0; border-top: 1px solid #eaecef; margin: 24px 0;">
+</div>
 
 # ImageLearner — CNN for Image Understanding
 
