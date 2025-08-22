@@ -1,0 +1,17 @@
+# pyproject.toml
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+indent-width = 4
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+ignore = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E402"]
