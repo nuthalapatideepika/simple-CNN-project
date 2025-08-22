@@ -14,7 +14,7 @@ This README also serves as a **Git & GitHub mini-handbook**, helping you learn m
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
 * [Why this project](#why-this-project)
 * [Key features](#key-features)
@@ -66,7 +66,7 @@ This README also serves as a **Git & GitHub mini-handbook**, helping you learn m
 
 ---
 
-## 📂 Project structure
+##  Project structure
 
 ```
 ImageLearner/
@@ -90,7 +90,7 @@ ImageLearner/
 
 ---
 
-## ⚡ Quickstart
+##  Quickstart
 
 Requires **Python 3.10+**. On Windows, use `.venv\Scripts\activate` instead of `source`.
 
