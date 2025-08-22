@@ -1,32 +1,184 @@
-<!-- HERO / HEADER (README-safe HTML) -->
-<div align="center">
-  <h1>ImageLearner — CNN for Image Understanding</h1>
-  <p>
-    A beginner-friendly <b>PyTorch</b> project that trains a compact CNN on <b>MNIST</b> and extends to <b>CIFAR-10</b>.<br>
-    This README doubles as a <b>Git &amp; GitHub mini-handbook</b> for a professional workflow.
-  </p>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ImageLearner — CNN for Image Understanding</title>
 
-  <!-- Shields -->
-  <p>
-    <img alt="Python" src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white">
-    <img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white">
-    <a href="https://github.com/YOUR_USERNAME/simple-CNN-project-/actions">
-      <img alt="CI" src="https://github.com/YOUR_USERNAME/simple-CNN-project-/actions/workflows/ci.yml/badge.svg">
-    </a>
-    <img alt="License" src="https://img.shields.io/badge/License-MIT-green">
-  </p>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Quick links -->
-  <p>
-    <a href="#-quickstart">Quickstart</a> •
-    <a href="#-training--evaluation">Train</a> •
-    <a href="#-extend-to-cifar-10">CIFAR-10</a> •
-    <a href="#-git--github--crash-course">Git Crash Course</a> •
-    <a href="#-quality-gates-ci-lint-tests">CI &amp; Tests</a>
-  </p>
+  <style>
+    :root{
+      --bg: #0b0c0f;
+      --panel: #111318;
+      --text: #e6e8ee;
+      --muted:#a7afc0;
+      --brand:#7c5cff;
+      --brand-2:#14b8a6;
+      --line:#202633;
+      --code-bg:#0f1320;
+      --kbd-bg:#151923;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#ffffff;
+        --panel:#ffffff;
+        --text:#0b0c0f;
+        --muted:#3b4354;
+        --brand:#5b3df6;
+        --brand-2:#0ea5a4;
+        --line:#e5e7eb;
+        --code-bg:#0f172a;
+        --kbd-bg:#f3f4f6;
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:980px;margin:0 auto;padding:24px}
+    .hero{padding:56px 0 28px 0;text-align:center}
+    .title{font-size:clamp(28px,5vw,48px);line-height:1.1;margin:0 0 12px;font-weight:800;letter-spacing:-0.02em}
+    .subtitle{color:var(--muted);max-width:820px;margin:0 auto 22px;font-size:18px}
+    .badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:18px 0 8px}
+    .badge img{height:22px}
+    .cta{display:flex;gap:14px;justify-content:center;margin:22px 0 6px}
+    .btn{display:inline-block;padding:10px 16px;border-radius:10px;font-weight:600;border:1px solid var(--line);background:linear-gradient(180deg,var(--panel),rgba(255,255,255,0.02));color:var(--text)}
+    .btn.primary{border:none;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:white}
+    .grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:28px}
+    @media(min-width:960px){.grid{grid-template-columns:1fr 1fr}}
+    .card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:16px;padding:18px}
+    .card h3{margin:0 0 6px;font-size:18px}
+    .muted{color:var(--muted)}
+    hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+    code,pre{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
+    pre{background:var(--code-bg);color:#e5e7eb;border-radius:12px;padding:14px;overflow:auto;border:1px solid var(--line)}
+    kbd{background:var(--kbd-bg);border:1px solid var(--line);border-bottom-width:2px;padding:2px 6px;border-radius:6px;font-size:85%}
+    .toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px}
+    .toc a{display:block;padding:10px 12px;border-radius:10px;border:1px solid var(--line);color:var(--text);background:linear-gradient(180deg,var(--panel),rgba(255,255,255,0.02))}
+    .foot{color:var(--muted);text-align:center;margin:38px 0 8px}
+  </style>
+</head>
+<body>
+  <header class="container hero">
+    <h1 class="title">ImageLearner — CNN for Image Understanding</h1>
+    <p class="subtitle">
+      A clean, beginner-friendly <strong>PyTorch</strong> project that trains a compact CNN on <strong>MNIST</strong> and extends to <strong>CIFAR-10</strong>.
+      Learn modern collaboration with the built-in <strong>Git &amp; GitHub mini-handbook</strong>.
+    </p>
+    <div class="badges">
+      <span class="badge"><img alt="Python" src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white"></span>
+      <span class="badge"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white"></span>
+      <span class="badge"><img alt="CI" src="https://img.shields.io/badge/CI-GitHub%20Actions-161B22?logo=githubactions"></span>
+      <span class="badge"><img alt="License" src="https://img.shields.io/badge/License-MIT-green"></span>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/YOUR_USERNAME/simple-CNN-project-#-quickstart">Get Started</a>
+      <a class="btn" href="https://github.com/YOUR_USERNAME/simple-CNN-project-">View on GitHub</a>
+    </div>
+  </header>
 
-  <hr style="width: 80%; border: 0; border-top: 1px solid #eaecef; margin: 24px 0;">
-</div>
+  <main class="container">
+    <section>
+      <div class="toc">
+        <a href="#quickstart">Quickstart</a>
+        <a href="#training">Training &amp; Evaluation</a>
+        <a href="#cifar">Extend to CIFAR-10</a>
+        <a href="#git">Git &amp; GitHub Crash Course</a>
+        <a href="#quality">Quality Gates</a>
+        <a href="#docker">Docker</a>
+      </div>
+    </section>
+
+    <hr>
+
+    <section id="quickstart" class="grid">
+      <div class="card">
+        <h3>Why this project</h3>
+        <p class="muted">Minimal but production-minded: clean structure, automation (lint/tests/CI), and a built-in Git handbook.</p>
+      </div>
+      <div class="card">
+        <h3>Key features</h3>
+        <ul class="muted">
+          <li>PyTorch training loop + CLI</li>
+          <li>SimpleCNN baseline</li>
+          <li>Ruff + PyTest + GitHub Actions</li>
+          <li>Dockerfile &amp; Makefile</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:18px">
+      <h3>Quickstart</h3>
+      <p class="muted">Requires Python 3.10+. On Windows use <kbd>.venv\Scripts\activate</kbd>.</p>
+<pre><code># Clone and enter
+git clone https://github.com/YOUR_USERNAME/simple-CNN-project-.git
+cd simple-CNN-project-
+
+# Virtual env & deps
+python -m venv .venv &amp;&amp; source .venv/bin/activate
+pip install -r requirements.txt
+
+# Smoke test + quick train
+pytest -q
+python src/train.py --epochs 1
+</code></pre>
+    </section>
+
+    <section id="training" class="card" style="margin-top:18px">
+      <h3>Training &amp; Evaluation</h3>
+<pre><code>python src/train.py --epochs 5 --lr 0.001 --batch_size 128 --seed 42
+# [Epoch 1] train_loss=... train_acc=... val_loss=... val_acc=...
+# Best accuracy: 0.99xx
+# Saved: outputs/best.pt
+</code></pre>
+    </section>
+
+    <section id="cifar" class="card" style="margin-top:18px">
+      <h3>Extend to CIFAR-10</h3>
+<pre><code># 1) src/data.py: switch to CIFAR10
+# 2) Normalize with dataset stats
+transforms.Normalize((0.4914, 0.4822, 0.4465),
+                     (0.2470, 0.2435, 0.2616))
+# 3) models/simple_cnn.py: input channels 1 → 3
+# 4) Add RandomCrop / HorizontalFlip
+</code></pre>
+    </section>
+
+    <section id="git" class="card" style="margin-top:18px">
+      <h3>Git &amp; GitHub — Daily workflow</h3>
+<pre><code>git checkout -b feature/cifar10-dataloaders
+make fmt && make lint && make test
+git add -A
+git commit -m "feat(data): add CIFAR-10 loaders and transforms"
+git push -u origin feature/cifar10-dataloaders
+# → Open PR → CI → Review → Squash &amp; Merge
+</code></pre>
+      <p class="muted"><b>Commit style:</b> Conventional Commits (feat, fix, docs, refactor, test, chore).</p>
+    </section>
+
+    <section id="quality" class="card" style="margin-top:18px">
+      <h3>Quality Gates</h3>
+      <ul class="muted">
+        <li>Ruff for formatting &amp; lint</li>
+        <li>PyTest for smoke tests</li>
+        <li>GitHub Actions CI on every push/PR</li>
+      </ul>
+    </section>
+
+    <section id="docker" class="card" style="margin-top:18px">
+      <h3>Docker</h3>
+<pre><code>docker build -t imagelearner .
+docker run --rm imagelearner python src/train.py --epochs 1
+</code></pre>
+    </section>
+
+    <p class="foot">© MIT License — Use freely with attribution.</p>
+  </main>
+</body>
+</html>
 
 # ImageLearner — CNN for Image Understanding
 
