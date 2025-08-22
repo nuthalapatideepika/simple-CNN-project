@@ -21,30 +21,22 @@ This README also doubles as a <b>Git & GitHub mini-handbook</b>, helping you lea
 
 <h2 style="font-size:28px;">Table of Contents</h2>
 
-[Why this project](#why-this-project)
-[Key features](#key-features)
-[Project structure](#project-structure)
-[Quickstart](#quickstart)
-[Training & evaluation](#training--evaluation)
-[Reproducibility](#reproducibility)
-[Extend to CIFAR-10](#extend-to-cifar-10)
-[Git & GitHub — Crash Course](#git--github--crash-course)
-[Core concepts](#core-concepts)
-[Daily workflow](#daily-workflow)
-[Commit messages](#commit-messages)
-[Pull Requests (PRs)](#pull-requests-prs)
-[Issues, labels, milestones](#issues-labels-milestones)
-[Releases & tags](#releases--tags)
-[Branch protection & CODEOWNERS](#branch-protection--codeowners)
-[Beginner efficiency checklist](#beginner-efficiency-checklist)
-[Quality gates (CI, lint, tests)](#quality-gates-ci-lint-tests)
-[Docker usage](#docker-usage)
-[Performance tips](#performance-tips)
-[FAQ](#faq)
-[Troubleshooting](#troubleshooting)
-[Roadmap](#roadmap)
-[Contributing](#contributing)
-[License](#license)
+[Why this project](#why-this-project) | 
+[Key features](#key-features) | 
+[Project structure](#project-structure) | 
+[Quickstart](#quickstart) | 
+[Training & evaluation](#training--evaluation) | 
+[Reproducibility](#reproducibility) | 
+[Extend to CIFAR-10](#extend-to-cifar-10) | 
+[Git & GitHub — Crash Course](#git--github--crash-course) | 
+[Quality gates (CI, lint, tests)](#quality-gates-ci-lint-tests) | 
+[Docker usage](#docker-usage) | 
+[Performance tips](#performance-tips) | 
+[FAQ](#faq) | 
+[Troubleshooting](#troubleshooting) | 
+[Roadmap](#roadmap) | 
+[Contributing](#contributing) | 
+[License](#license) | 
 [Appendix — Git commands](#appendix--git-commands)
 
 <hr>
