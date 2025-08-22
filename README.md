@@ -1,6 +1,6 @@
 
 
-# 📸 ImageLearner — CNN for Image Understanding
+# ImageLearner — CNN for Image Understanding
 
 *A clean, beginner-friendly PyTorch project that trains a compact Convolutional Neural Network (CNN) on MNIST and easily extends to CIFAR-10.*  
 This README also doubles as a **Git & GitHub mini-handbook**, helping you learn modern collaboration while building a real ML project.
