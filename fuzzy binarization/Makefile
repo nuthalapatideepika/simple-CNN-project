@@ -4,13 +4,13 @@ PY := python
 .PHONY: fmt lint test train
 
 fmt:
-    ruff format .
+	ruff format .
 
 lint:
-    ruff check .
+	ruff check .
 
 test:
-    pytest -q
+	pytest -q
 
 train:
-    $(PY) src/train.py --epochs 1
+	$(PY) src/train.py --epochs 1

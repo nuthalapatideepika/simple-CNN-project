@@ -13,16 +13,28 @@ def set_seed(seed):
         torch.cuda.manual_seed_all(seed)
 
 def load_data(batch_size):
-    transform = transforms.Compose([
-        transforms.ToTensor(),
-        transforms.Normalize((0.5,), (0.5,)),
-    ])
-
-    trainset = torchvision.datasets.MNIST(root='./data', train=True, download=True, transform=transform)
-    trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size, shuffle=True)
-
-    testset = torchvision.datasets.MNIST(root='./data', train=False, download=True, transform=transform)
-    testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size, shuffle=False)
+    from torch.utils.data import TensorDataset, DataLoader
+    
+    # Load mock data
+    train_images = torch.load('./data/mock_train_images.pt').float() / 255.0
+    train_labels = torch.load('./data/mock_train_labels.pt')
+    test_images = torch.load('./data/mock_test_images.pt').float() / 255.0
+    test_labels = torch.load('./data/mock_test_labels.pt')
+    
+    # Add channel dimension and normalize
+    train_images = train_images.unsqueeze(1)  # Add channel dimension
+    test_images = test_images.unsqueeze(1)    # Add channel dimension
+    
+    # Normalize to [-1, 1] range  
+    train_images = (train_images - 0.5) / 0.5
+    test_images = (test_images - 0.5) / 0.5
+    
+    # Create datasets
+    trainset = TensorDataset(train_images, train_labels)
+    testset = TensorDataset(test_images, test_labels)
+    
+    trainloader = DataLoader(trainset, batch_size=batch_size, shuffle=True)
+    testloader = DataLoader(testset, batch_size=batch_size, shuffle=False)
 
     return trainloader, testloader
 
