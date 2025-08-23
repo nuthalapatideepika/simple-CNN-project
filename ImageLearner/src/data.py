@@ -2,12 +2,13 @@ def get_mnist_loaders(batch_size, train=True):
     from torchvision import datasets, transforms
     from torch.utils.data import DataLoader
 
-    transform = transforms.Compose([
-        transforms.ToTensor(),
-        transforms.Normalize((0.1307,), (0.3081,))
-    ])
+    transform = transforms.Compose(
+        [transforms.ToTensor(), transforms.Normalize((0.1307,), (0.3081,))]
+    )
 
-    dataset = datasets.MNIST(root='data', train=train, download=True, transform=transform)
+    dataset = datasets.MNIST(
+        root="data", train=train, download=True, transform=transform
+    )
     loader = DataLoader(dataset, batch_size=batch_size, shuffle=train)
 
     return loader
@@ -17,12 +18,16 @@ def get_cifar10_loaders(batch_size, train=True):
     from torchvision import datasets, transforms
     from torch.utils.data import DataLoader
 
-    transform = transforms.Compose([
-        transforms.ToTensor(),
-        transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2470, 0.2435, 0.2616))
-    ])
+    transform = transforms.Compose(
+        [
+            transforms.ToTensor(),
+            transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2470, 0.2435, 0.2616)),
+        ]
+    )
 
-    dataset = datasets.CIFAR10(root='data', train=train, download=True, transform=transform)
+    dataset = datasets.CIFAR10(
+        root="data", train=train, download=True, transform=transform
+    )
     loader = DataLoader(dataset, batch_size=batch_size, shuffle=train)
 
     return loader

@@ -5,13 +5,13 @@
 .PHONY: fmt lint test train
 
 fmt:
-    ruff . --fix
+	ruff format . && ruff check . --fix
 
 lint:
-    ruff .
+	ruff check .
 
 test:
-    pytest
+	PYTHONPATH=/home/runner/work/AI-projects/AI-projects/ImageLearner pytest
 
 train:
-    python src/train.py --epochs 5 --lr 0.001 --batch_size 128 --seed 42
+	PYTHONPATH=/home/runner/work/AI-projects/AI-projects/ImageLearner python src/train_synthetic.py --epochs 5 --lr 0.001 --batch_size 128 --seed 42
