@@ -1,40 +1,44 @@
-# AI ProjectsTemplate
+# AI Projects Template
 
 A high-quality, production-ready PyTorch template for building, training, and deploying compact Convolutional Neural Networks (CNNs) on image datasets.  
 Designed for rapid prototyping, reproducibility, and seamless integration with modern ML tooling.
 
----
-
-## Features
-
-- **Modular Codebase:** Clean separation of models, data loaders, and training logic.
-- **Flexible Data Pipelines:** Easily swap between MNIST, CIFAR-10, or custom datasets.
-- **Configurable Training:** Command-line interface for epochs, learning rate, batch size, seed, and more.
-- **Best Practices:** Reproducible experiments, device-agnostic code, and robust error handling.
-- **Continuous Integration:** Automated linting, formatting, and unit tests via GitHub Actions.
-- **Docker Support:** Build and run your project in isolated, reproducible containers.
-- **Extensible:** Add new models, datasets, or training strategies with minimal effort.
+This repository contains two AI projects:
+1. **ImageLearner** - CNN for Image Understanding (MNIST/CIFAR-10)
+2. **fuzzy binarization** - FuzzyCNN for binary image classification
 
 ---
 
-## Quickstart
+## Quick Start
 
+### Run All Projects
 ```bash
-# Clone your repository
+# Clone the repository
 git clone https://github.com/<your-username>/<your-repo>.git
 cd <your-repo>
 
-# Set up Python environment
-python -m venv .venv
-source .venv/bin/activate
-
 # Install dependencies
-pip install -r requirements.txt
+pip install torch torchvision tqdm pytest ruff numpy pandas matplotlib
 
-# Run unit tests
-pytest -q
+# Run all projects at once
+./run_projects.sh
+```
 
-# Train a model (example: 1 epoch)
+### Run Individual Projects
+
+#### ImageLearner
+```bash
+cd ImageLearner
+make train
+# or
+python src/train.py --epochs 5 --lr 0.001 --batch_size 128 --seed 42
+```
+
+#### Fuzzy Binarization
+```bash
+cd "fuzzy binarization"
+make train
+# or
 python src/train.py --epochs 1
 ```
 

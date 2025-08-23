@@ -15,10 +15,27 @@ def set_random_seeds(seed):
     torch.backends.cudnn.benchmark = False
 
 def get_loaders(batch_size, train=True, data_dir="data"):
-    transform = transforms.Compose([
-        transforms.ToTensor(),
-        transforms.Normalize((0.1307,), (0.3081,))
-    ])
-    dataset = datasets.MNIST(root=data_dir, train=train, download=True, transform=transform)
+    from torch.utils.data import TensorDataset, DataLoader
+    
+    # Load mock data
+    if train:
+        images = torch.load(f'{data_dir}/mock_train_images.pt').float() / 255.0
+        labels = torch.load(f'{data_dir}/mock_train_labels.pt')
+    else:
+        images = torch.load(f'{data_dir}/mock_test_images.pt').float() / 255.0
+        labels = torch.load(f'{data_dir}/mock_test_labels.pt')
+    
+    # Add channel dimension and normalize
+    images = images.unsqueeze(1)  # Add channel dimension
+    
+    # Normalize to standard range
+    images = (images - 0.1307) / 0.3081
+    
+    # For fuzzy binarization, we need binary labels (0 or 1)
+    # Convert MNIST labels (0-9) to binary (0: even digits, 1: odd digits)
+    labels = labels % 2
+    
+    # Create dataset
+    dataset = TensorDataset(images, labels)
     loader = DataLoader(dataset, batch_size=batch_size, shuffle=train)
     return loader
